@@ -24,7 +24,7 @@ namespace mem{
 		}
 
 		Process(const TCHAR* proc_name){
-			PID = mem::get_pid(proc_name);
+			PID = Process::get_pid(proc_name);
 			if (!PID)
 				throw std::runtime_error("Unable to find process ID through process name");
 			process_handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, PID);
